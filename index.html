@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Virello Development — Independent iOS Studio</title>
-  <meta name="description" content="Virello Development is a one-person iOS studio based in Sweden, building focused apps that help people track, reflect, and improve.">
+  <meta name="description" content="Virello Development is a one-person iOS studio based in Stockholm, building focused apps that help people track, reflect, and improve.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=DM+Serif+Display&display=swap" rel="stylesheet">
@@ -20,8 +20,6 @@
       --border: rgba(0,0,0,0.1);
       --border-mid: rgba(0,0,0,0.18);
       --accent: #185FA5;
-      --accent-bg: #E6F1FB;
-      --green: #0F6E56;
     }
 
     @media (prefers-color-scheme: dark) {
@@ -34,12 +32,8 @@
         --border: rgba(255,255,255,0.1);
         --border-mid: rgba(255,255,255,0.18);
         --accent: #5BA3E0;
-        --accent-bg: #0c2c44;
-        --green: #1D9E75;
       }
     }
-
-    html { font-size: 16px; }
 
     body {
       font-family: 'DM Sans', system-ui, sans-serif;
@@ -49,13 +43,8 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    .page {
-      max-width: 780px;
-      margin: 0 auto;
-      padding: 3rem 1.5rem 5rem;
-    }
+    .page { max-width: 780px; margin: 0 auto; padding: 3rem 1.5rem 5rem; }
 
-    /* Nav */
     nav {
       display: flex;
       align-items: center;
@@ -84,7 +73,6 @@
 
     .nav-contact:hover { color: var(--text); }
 
-    /* Hero */
     .hero { margin-bottom: 4rem; }
 
     .hero-eyebrow {
@@ -113,7 +101,6 @@
       font-weight: 300;
     }
 
-    /* Section label */
     .section-label {
       font-size: 11px;
       font-weight: 500;
@@ -123,10 +110,9 @@
       margin-bottom: 1.25rem;
     }
 
-    /* Apps grid */
     .apps-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+      grid-template-columns: repeat(3, 1fr);
       gap: 1px;
       background: var(--border);
       border-radius: 12px;
@@ -140,13 +126,15 @@
       display: flex;
       flex-direction: column;
       gap: 10px;
-      cursor: pointer;
       transition: background 0.15s;
       text-decoration: none;
       color: inherit;
+      cursor: pointer;
     }
 
-    .app-card:hover { background: var(--bg); }
+    a.app-card:hover { background: var(--bg); }
+
+    .app-card.coming-soon { cursor: default; }
 
     .app-icon {
       width: 40px;
@@ -156,11 +144,12 @@
       align-items: center;
       justify-content: center;
       margin-bottom: 4px;
+      font-size: 20px;
     }
 
     .app-icon-ls { background: #185FA5; }
     .app-icon-pr { background: #0F6E56; }
-
+    .app-icon-bk { background: #1A8F8F; }
     .app-icon svg { width: 20px; height: 20px; }
 
     .app-name {
@@ -169,6 +158,7 @@
       display: flex;
       align-items: center;
       gap: 8px;
+      flex-wrap: wrap;
     }
 
     .app-tagline {
@@ -183,38 +173,40 @@
       color: var(--accent);
       font-weight: 500;
       letter-spacing: 0.02em;
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
       margin-top: auto;
       padding-top: 4px;
     }
 
-    .badge {
-      display: inline-block;
+    .badge-new {
       font-size: 10px;
       font-weight: 500;
       letter-spacing: 0.06em;
       text-transform: uppercase;
-      background: var(--accent-bg);
-      color: var(--accent);
+      background: #E6F1FB;
+      color: #185FA5;
       border-radius: 4px;
       padding: 2px 7px;
     }
 
-    /* Divider */
-    hr {
-      border: none;
-      border-top: 0.5px solid var(--border);
-      margin-bottom: 3rem;
+    .badge-soon {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      background: rgba(0,0,0,0.06);
+      color: var(--hint);
+      border-radius: 4px;
+      padding: 2px 7px;
     }
 
-    /* Contact */
-    .contact-block {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
+    @media (prefers-color-scheme: dark) {
+      .badge-new { background: #0c2c44; color: #5BA3E0; }
+      .badge-soon { background: rgba(255,255,255,0.08); }
     }
+
+    hr { border: none; border-top: 0.5px solid var(--border); margin-bottom: 3rem; }
+
+    .contact-block { display: flex; flex-direction: column; gap: 6px; }
 
     .contact-block p {
       font-size: 14px;
@@ -232,7 +224,6 @@
 
     .contact-email:hover { opacity: 0.75; }
 
-    /* Footer */
     footer {
       margin-top: 4rem;
       display: flex;
@@ -242,15 +233,8 @@
       gap: 8px;
     }
 
-    .footer-copy {
-      font-size: 12px;
-      color: var(--hint);
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 16px;
-    }
+    .footer-copy { font-size: 12px; color: var(--hint); }
+    .footer-links { display: flex; gap: 16px; }
 
     .footer-links a {
       font-size: 12px;
@@ -261,7 +245,7 @@
 
     .footer-links a:hover { color: var(--muted); }
 
-    @media (max-width: 520px) {
+    @media (max-width: 560px) {
       .apps-grid { grid-template-columns: 1fr; }
     }
   </style>
@@ -270,13 +254,13 @@
   <div class="page">
     <nav>
       <a href="/" class="nav-logo">Virello <span>Development</span></a>
-      <a href="mailto:info@virellodev.com" class="nav-contact">a.faberling@virellodev.com</a>
+      <a href="mailto:hello@virellodev.com" class="nav-contact">hello@virellodev.com</a>
     </nav>
 
     <section class="hero">
       <p class="hero-eyebrow">Independent iOS Studio</p>
       <h1 class="hero-title">Thoughtfully crafted apps for everyday life.</h1>
-      <p class="hero-desc">Virello Development is a one-person studio based in Sweden, building focused iOS apps that help people track, reflect, and improve.</p>
+      <p class="hero-desc">Virello Development is a one-person studio based in Stockholm, building focused iOS apps that help people track, reflect, and improve.</p>
     </section>
 
     <p class="section-label">Apps</p>
@@ -302,10 +286,15 @@
             <path d="M7 18 L13 18" stroke="white" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
           </svg>
         </div>
-        <p class="app-name">PostRound <span class="badge">New</span></p>
+        <p class="app-name">PostRound <span class="badge-new">New</span></p>
         <p class="app-tagline">Golf round logging, handicap tracking, and a weekly training focus based on your game.</p>
         <span class="app-link">Support &amp; info →</span>
       </a>
+      <div class="app-card coming-soon">
+        <div class="app-icon app-icon-bk">🛒</div>
+        <p class="app-name">Basky <span class="badge-soon">Coming soon</span></p>
+        <p class="app-tagline">Smart grocery lists with recipe import, store mode, and iCloud sharing.</p>
+      </div>
     </div>
 
     <hr>
@@ -313,11 +302,11 @@
     <p class="section-label">Contact</p>
     <div class="contact-block">
       <p>Questions, feedback, or press inquiries — reach out directly.</p>
-      <a href="mailto:hello@virellodev.com" class="contact-email">a.faberling@virellodev.com</a>
+      <a href="mailto:hello@virellodev.com" class="contact-email">hello@virellodev.com</a>
     </div>
 
     <footer>
-      <p class="footer-copy">© 2026 Virello Development. Sweden.</p>
+      <p class="footer-copy">© 2026 Virello Development. Stockholm, Sweden.</p>
       <div class="footer-links">
         <a href="https://support.virellodev.com/privacy.html">Privacy</a>
         <a href="https://support.virellodev.com/terms.html">Terms</a>
