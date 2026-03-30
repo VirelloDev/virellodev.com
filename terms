@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Virello Development — Privacy Policy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --text: #1a1a18;
+      --muted: #6b6b66;
+      --hint: #9b9b96;
+      --surface: #ffffff;
+      --bg: #f5f4f0;
+      --border: rgba(0,0,0,0.1);
+      --border-mid: rgba(0,0,0,0.18);
+      --accent: #185FA5;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --text: #e8e8e4;
+        --muted: #9b9b96;
+        --hint: #6b6b66;
+        --surface: #1e1e1c;
+        --bg: #161614;
+        --border: rgba(255,255,255,0.1);
+        --border-mid: rgba(255,255,255,0.18);
+        --accent: #5BA3E0;
+      }
+    }
+
+    body {
+      font-family: 'DM Sans', system-ui, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .page { max-width: 680px; margin: 0 auto; padding: 3rem 1.5rem 5rem; }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 3.5rem;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .nav-logo {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 17px;
+      letter-spacing: -0.3px;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .nav-logo span { color: var(--accent); }
+
+    .nav-links { display: flex; gap: 20px; }
+
+    .nav-links a {
+      font-size: 13px;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .nav-links a:hover { color: var(--text); }
+    .nav-links a.active { color: var(--accent); font-weight: 500; }
+
+    .page-header { margin-bottom: 2.5rem; }
+
+    .page-header h1 {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 30px;
+      letter-spacing: -0.3px;
+      line-height: 1.1;
+      margin-bottom: 6px;
+    }
+
+    .page-header p {
+      font-size: 14px;
+      color: var(--muted);
+      font-weight: 300;
+    }
+
+    .section-label {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--hint);
+      margin-bottom: 1rem;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 0.5px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 2rem;
+    }
+
+    .card-section {
+      padding: 1.25rem 1.5rem;
+      border-bottom: 0.5px solid var(--border);
+    }
+
+    .card-section:last-child { border-bottom: none; }
+
+    .card-section h3 {
+      font-size: 13px;
+      font-weight: 500;
+      margin-bottom: 6px;
+    }
+
+    .card-section p {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.65;
+      font-weight: 300;
+    }
+
+    .card-section a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .card-section a:hover { opacity: 0.75; }
+
+    .app-links {
+      background: var(--surface);
+      border: 0.5px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 2rem;
+    }
+
+    .app-link-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 1.5rem;
+      border-bottom: 0.5px solid var(--border);
+      gap: 12px;
+    }
+
+    .app-link-row:last-child { border-bottom: none; }
+
+    .app-link-name {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .app-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 3px;
+      flex-shrink: 0;
+    }
+
+    .app-link-name span {
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .app-link-row a {
+      font-size: 12px;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    .app-link-row a:hover { opacity: 0.75; }
+
+    footer {
+      margin-top: 4rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .footer-copy { font-size: 12px; color: var(--hint); }
+    .footer-links { display: flex; gap: 16px; }
+
+    .footer-links a {
+      font-size: 12px;
+      color: var(--hint);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .footer-links a:hover { color: var(--muted); }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <nav>
+      <a href="/" class="nav-logo">Virello <span>Development</span></a>
+      <div class="nav-links">
+        <a href="privacy.html" class="active">Privacy</a>
+        <a href="terms.html">Terms</a>
+      </div>
+    </nav>
+
+    <div class="page-header">
+      <h1>Privacy Policy</h1>
+      <p>Last updated: March 2026</p>
+    </div>
+
+    <p class="section-label">This website</p>
+    <div class="card">
+      <div class="card-section">
+        <h3>No data collected</h3>
+        <p>The virellodev.com website does not collect any personal data. There are no contact forms, no user accounts, no analytics scripts, and no cookies beyond what your browser sets by default.</p>
+      </div>
+      <div class="card-section">
+        <h3>External links</h3>
+        <p>This site links to Apple's App Store and to individual app support pages. Virello Development is not responsible for the privacy practices of external sites.</p>
+      </div>
+      <div class="card-section">
+        <h3>Contact by email</h3>
+        <p>If you email us at <a href="mailto:hello@virellodev.com">hello@virellodev.com</a>, your message and address are used only to respond to your inquiry. We do not share or store email data beyond what is necessary for the reply.</p>
+      </div>
+    </div>
+
+    <p class="section-label">App privacy policies</p>
+    <div class="app-links">
+      <div class="app-link-row">
+        <div class="app-link-name">
+          <div class="app-dot" style="background: #185FA5;"></div>
+          <span>LifeScore</span>
+        </div>
+        <a href="https://support.virellodev.com/privacy.html">View policy →</a>
+      </div>
+      <div class="app-link-row">
+        <div class="app-link-name">
+          <div class="app-dot" style="background: #0F6E56;"></div>
+          <span>PostRound</span>
+        </div>
+        <a href="https://support.virellodev.com/postround/privacy.html">View policy →</a>
+      </div>
+      <div class="app-link-row">
+        <div class="app-link-name">
+          <div class="app-dot" style="background: #1A8F8F;"></div>
+          <span>Basky</span>
+        </div>
+        <a href="https://support.virellodev.com/basky/privacy.html">View policy →</a>
+      </div>
+    </div>
+
+    <footer>
+      <p class="footer-copy">© 2026 Virello Development. Stockholm, Sweden.</p>
+      <div class="footer-links">
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
