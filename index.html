@@ -110,40 +110,44 @@
       margin-bottom: 1.25rem;
     }
 
-    .apps-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1px;
-      background: var(--border);
+    .apps-list {
+      background: var(--surface);
+      border: 0.5px solid var(--border);
       border-radius: 12px;
       overflow: hidden;
       margin-bottom: 4rem;
     }
 
-    .app-card {
-      background: var(--surface);
-      padding: 1.75rem 1.5rem;
+    .app-row {
       display: flex;
-      flex-direction: column;
-      gap: 10px;
-      transition: background 0.15s;
-      text-decoration: none;
-      color: inherit;
-      cursor: pointer;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      padding: 1.5rem;
+      border-bottom: 0.5px solid var(--border);
     }
 
-    a.app-card:hover { background: var(--bg); }
+    .app-row-left {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      flex: 1;
+      min-width: 0;
+    }
 
-    .app-card.coming-soon { cursor: default; }
+    .app-row-text {
+      flex: 1;
+      min-width: 0;
+    }
 
     .app-icon {
-      width: 40px;
-      height: 40px;
-      border-radius: 10px;
+      width: 44px;
+      height: 44px;
+      border-radius: 11px;
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 4px;
+      flex-shrink: 0;
       font-size: 20px;
     }
 
@@ -159,6 +163,7 @@
       align-items: center;
       gap: 8px;
       flex-wrap: wrap;
+      margin-bottom: 3px;
     }
 
     .app-tagline {
@@ -166,15 +171,53 @@
       color: var(--muted);
       line-height: 1.55;
       font-weight: 300;
+      margin-bottom: 10px;
     }
 
-    .app-link {
+    .app-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .appstore-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--surface);
+      background: var(--text);
+      border-radius: 6px;
+      padding: 5px 10px;
+      text-decoration: none;
+      transition: opacity 0.15s;
+    }
+
+    .appstore-btn:hover { opacity: 0.75; }
+
+    .support-link {
       font-size: 12px;
       color: var(--accent);
       font-weight: 500;
-      letter-spacing: 0.02em;
-      margin-top: auto;
-      padding-top: 4px;
+      text-decoration: none;
+    }
+
+    .support-link:hover { opacity: 0.75; }
+
+    .qr-wrap {
+      flex-shrink: 0;
+    }
+
+    .qr-img {
+      width: 80px;
+      height: 80px;
+      border-radius: 8px;
+      display: block;
+    }
+
+    @media (max-width: 520px) {
+      .qr-wrap { display: none; }
     }
 
     .badge-new {
@@ -245,10 +288,7 @@
 
     .footer-links a:hover { color: var(--muted); }
 
-    @media (max-width: 560px) {
-      .apps-grid { grid-template-columns: 1fr; }
-    }
-  </style>
+    </style>
 </head>
 <body>
   <div class="page">
@@ -264,38 +304,81 @@
     </section>
 
     <p class="section-label">Apps</p>
-    <div class="apps-grid">
-      <a href="https://support.virellodev.com/" class="app-card">
-        <div class="app-icon app-icon-ls">
-          <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="3" y="3" width="6" height="6" rx="1.5" fill="white" opacity="0.9"/>
-            <rect x="11" y="3" width="6" height="6" rx="1.5" fill="white" opacity="0.55"/>
-            <rect x="3" y="11" width="6" height="6" rx="1.5" fill="white" opacity="0.55"/>
-            <rect x="11" y="11" width="6" height="6" rx="1.5" fill="white" opacity="0.9"/>
-          </svg>
+    <div class="apps-list">
+
+      <div class="app-row">
+        <div class="app-row-left">
+          <div class="app-icon app-icon-ls">
+            <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="3" y="3" width="6" height="6" rx="1.5" fill="white" opacity="0.9"/>
+              <rect x="11" y="3" width="6" height="6" rx="1.5" fill="white" opacity="0.55"/>
+              <rect x="3" y="11" width="6" height="6" rx="1.5" fill="white" opacity="0.55"/>
+              <rect x="11" y="11" width="6" height="6" rx="1.5" fill="white" opacity="0.9"/>
+            </svg>
+          </div>
+          <div class="app-row-text">
+            <p class="app-name">LifeScore</p>
+            <p class="app-tagline">Daily self-ratings, weekly review, and insights to understand what drives your wellbeing.</p>
+            <div class="app-actions">
+              <a href="https://apps.apple.com/app/id6756915103" class="appstore-btn" target="_blank">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                App Store
+              </a>
+              <a href="https://support.virellodev.com/" class="support-link">Support →</a>
+            </div>
+          </div>
         </div>
-        <p class="app-name">LifeScore</p>
-        <p class="app-tagline">Daily self-ratings, weekly review, and insights to understand what drives your wellbeing.</p>
-        <span class="app-link">Support &amp; info →</span>
-      </a>
-      <a href="https://support.virellodev.com/postround/" class="app-card">
-        <div class="app-icon app-icon-pr">
-          <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="10" cy="8" r="4" stroke="white" stroke-width="1.5" opacity="0.9"/>
-            <path d="M10 12 L10 18" stroke="white" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/>
-            <path d="M7 18 L13 18" stroke="white" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
-          </svg>
+        <div class="qr-wrap">
+          <img src="QR_LifeScore.png" alt="LifeScore QR code" class="qr-img">
         </div>
-        <p class="app-name">PostRound <span class="badge-new">New</span></p>
-        <p class="app-tagline">Golf round logging, handicap tracking, and a weekly training focus based on your game.</p>
-        <span class="app-link">Support &amp; info →</span>
-      </a>
-      <a href="https://support.virellodev.com/basky/" class="app-card">
-        <div class="app-icon app-icon-bk">🛒</div>
-        <p class="app-name">Basky <span class="badge-new" style="background:#E0F3F3;color:#1A8F8F;">New</span></p>
-        <p class="app-tagline">Smart grocery lists with recipe import, store mode, and iCloud sharing.</p>
-        <span class="app-link">Support &amp; info →</span>
-      </a>
+      </div>
+
+      <div class="app-row">
+        <div class="app-row-left">
+          <div class="app-icon app-icon-pr">
+            <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="10" cy="8" r="4" stroke="white" stroke-width="1.5" opacity="0.9"/>
+              <path d="M10 12 L10 18" stroke="white" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/>
+              <path d="M7 18 L13 18" stroke="white" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+            </svg>
+          </div>
+          <div class="app-row-text">
+            <p class="app-name">PostRound <span class="badge-new">New</span></p>
+            <p class="app-tagline">Golf round logging, handicap tracking, and a weekly training focus based on your game.</p>
+            <div class="app-actions">
+              <a href="https://apps.apple.com/app/id6758979676" class="appstore-btn" target="_blank">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                App Store
+              </a>
+              <a href="https://support.virellodev.com/postround/" class="support-link">Support →</a>
+            </div>
+          </div>
+        </div>
+        <div class="qr-wrap">
+          <img src="QR_PostRound.png" alt="PostRound QR code" class="qr-img">
+        </div>
+      </div>
+
+      <div class="app-row" style="border-bottom: none;">
+        <div class="app-row-left">
+          <div class="app-icon app-icon-bk">🛒</div>
+          <div class="app-row-text">
+            <p class="app-name">Basky <span class="badge-new" style="background:#E0F3F3;color:#1A8F8F;">New</span></p>
+            <p class="app-tagline">Smart grocery lists with recipe import, store mode, and iCloud sharing.</p>
+            <div class="app-actions">
+              <a href="https://apps.apple.com/app/id6759281985" class="appstore-btn" target="_blank">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                App Store
+              </a>
+              <a href="https://support.virellodev.com/basky/" class="support-link">Support →</a>
+            </div>
+          </div>
+        </div>
+        <div class="qr-wrap">
+          <img src="QR_Basky.png" alt="Basky QR code" class="qr-img">
+        </div>
+      </div>
+
     </div>
 
     <hr>
