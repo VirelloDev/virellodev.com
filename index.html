@@ -132,6 +132,7 @@
 
     .app-row:last-child { border-bottom: none; }
     .app-row:hover { background: var(--bg); }
+    .app-row { cursor: pointer; }
 
     .app-row-left {
       display: flex;
@@ -304,7 +305,7 @@
     <p class="section-label">Apps</p>
     <div class="apps-list">
 
-      <a href="https://support.virellodev.com/" class="app-row">
+      <div class="app-row" onclick="location.href='https://support.virellodev.com/'">
         <div class="app-row-left">
           <div class="app-icon app-icon-ls">
             <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -328,9 +329,9 @@
         <div class="qr-wrap">
           <img src="QR_LifeScore.png" alt="LifeScore QR code" class="qr-img">
         </div>
-      </a>
+      </div>
 
-      <a href="https://support.virellodev.com/postround/" class="app-row">
+      <div class="app-row" onclick="location.href='https://support.virellodev.com/postround/'">
         <div class="app-row-left">
           <div class="app-icon app-icon-pr">
             <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -353,9 +354,9 @@
         <div class="qr-wrap">
           <img src="QR_PostRound.png" alt="PostRound QR code" class="qr-img">
         </div>
-      </a>
+      </div>
 
-      <a href="https://support.virellodev.com/basky/" class="app-row">
+      <div class="app-row" onclick="location.href='https://support.virellodev.com/basky/'">
         <div class="app-row-left">
           <div class="app-icon app-icon-bk">🛒</div>
           <div class="app-row-text">
@@ -372,7 +373,7 @@
         <div class="qr-wrap">
           <img src="QR_Basky.png" alt="Basky QR code" class="qr-img">
         </div>
-      </a>
+      </div>
 
     </div>
 
